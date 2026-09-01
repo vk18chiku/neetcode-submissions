@@ -1,0 +1,21 @@
+class Solution:
+    def numRescueBoats(self, people, limit):
+
+        people.sort()
+
+        start = 0
+        end = len(people) - 1
+
+        count = 0
+
+        while start <= end:
+
+            # Agar dono ek boat me ja sakte hain
+            if people[start] + people[end] <= limit:
+                start += 1
+
+            end=end-1
+
+            count += 1
+
+        return count
